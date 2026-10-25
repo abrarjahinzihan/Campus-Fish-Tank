@@ -1,0 +1,28 @@
+{
+  "name": "class-fish-tank-mern",
+  "version": "1.0.0",
+  "description": "MERN Classroom Aquarium App - Interactive Gamification & Motivation for Students",
+  "main": "server/server.js",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "mern",
+    "classroom",
+    "gamification",
+    "education",
+    "fish-tank",
+    "homework-motivation",
+    "react",
+    "express",
+    "socket.io",
+    "canvas",
+    "mongodb"
+  ],
+  "author": "Zihan",
+  "license": "MIT"
+}

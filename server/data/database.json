@@ -1,0 +1,1002 @@
+{
+  "classrooms": [
+    {
+      "_id": "course-1792944200426",
+      "courseCode": "CSE221",
+      "courseName": "DSA",
+      "title": "CSE221: DSA",
+      "subTitle": "Tap any fish to award lab and assignment points",
+      "department": "Computer Science",
+      "semester": "Fall 2026",
+      "instructor": "Prof. zihan",
+      "instructorEmail": "abrarjahinkhanzihan@gmail.com",
+      "description": "Course homework and live aquarium tank.",
+      "colorGradient": "from-cyan-500 via-blue-600 to-indigo-700",
+      "theme": "nightGlow",
+      "language": "en",
+      "nameVisibility": "always",
+      "soundEnabled": true,
+      "decorations": [
+        {
+          "id": "dec-1",
+          "type": "treasureChest",
+          "name": "Treasure Chest",
+          "x": 50,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-2",
+          "type": "pearlClam",
+          "name": "Giant Pearl Clam",
+          "x": 6,
+          "y": 35,
+          "active": true
+        },
+        {
+          "id": "dec-3",
+          "type": "pinkCoral",
+          "name": "Pink Coral Reef",
+          "x": 9,
+          "y": 90,
+          "active": true
+        },
+        {
+          "id": "dec-6",
+          "type": "seaweed",
+          "name": "Emerald Seaweed",
+          "x": 92,
+          "y": 88,
+          "active": true
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.426Z",
+      "updatedAt": "2026-10-25T16:03:20.426Z"
+    },
+    {
+      "_id": "course-cs301",
+      "courseCode": "CS 301",
+      "courseName": "Algorithms & Data Structures",
+      "title": "CS 301: Algorithms & Data Structures",
+      "subTitle": "Tap any fish to award lab problem sets • Tap title to rename",
+      "department": "Computer Science",
+      "semester": "Fall 2026",
+      "instructor": "Prof. Zihan",
+      "description": "Weekly algorithm challenges, dynamic programming labs, and code peer reviews.",
+      "colorGradient": "from-cyan-500 via-blue-600 to-indigo-700",
+      "theme": "nightGlow",
+      "language": "en",
+      "nameVisibility": "always",
+      "soundEnabled": true,
+      "decorations": [
+        {
+          "id": "dec-1",
+          "type": "treasureChest",
+          "name": "Treasure Chest",
+          "x": 50,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-2",
+          "type": "pearlClam",
+          "name": "Giant Pearl Clam",
+          "x": 6,
+          "y": 35,
+          "active": true
+        },
+        {
+          "id": "dec-3",
+          "type": "pinkCoral",
+          "name": "Pink Coral Reef",
+          "x": 9,
+          "y": 90,
+          "active": true
+        },
+        {
+          "id": "dec-4",
+          "type": "redCoral",
+          "name": "Sunken Coral",
+          "x": 37,
+          "y": 90,
+          "active": true
+        },
+        {
+          "id": "dec-5",
+          "type": "rockArch",
+          "name": "Grotto Arch",
+          "x": 20,
+          "y": 91,
+          "active": true
+        },
+        {
+          "id": "dec-6",
+          "type": "seaweed",
+          "name": "Emerald Seaweed",
+          "x": 92,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-7",
+          "type": "castle",
+          "name": "Atlantis Castle",
+          "x": 75,
+          "y": 86,
+          "active": true
+        }
+      ]
+    },
+    {
+      "_id": "course-bio210",
+      "courseCode": "BIO 210",
+      "courseName": "Cellular Biology & Genetics",
+      "title": "BIO 210: Cellular Biology & Genetics",
+      "subTitle": "Microscopy reports, lab writeups, and genetics problem sets",
+      "department": "Biological Sciences",
+      "semester": "Fall 2026",
+      "instructor": "Prof. Zihan",
+      "description": "Investigating DNA replication, CRISPR gene editing, and cellular metabolism.",
+      "colorGradient": "from-emerald-500 via-teal-600 to-cyan-700",
+      "theme": "sunnyReef",
+      "language": "en",
+      "nameVisibility": "always",
+      "soundEnabled": true,
+      "decorations": [
+        {
+          "id": "dec-1",
+          "type": "treasureChest",
+          "name": "Treasure Chest",
+          "x": 50,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-3",
+          "type": "pinkCoral",
+          "name": "Pink Coral Reef",
+          "x": 9,
+          "y": 90,
+          "active": true
+        },
+        {
+          "id": "dec-6",
+          "type": "seaweed",
+          "name": "Emerald Seaweed",
+          "x": 92,
+          "y": 88,
+          "active": true
+        }
+      ]
+    },
+    {
+      "_id": "course-stat200",
+      "courseCode": "STAT 200",
+      "courseName": "Applied Statistics & Probability",
+      "title": "STAT 200: Applied Statistics & Probability",
+      "subTitle": "R programming assignments, data modeling, and probability theory",
+      "department": "Mathematics & Data Science",
+      "semester": "Fall 2026",
+      "instructor": "Prof. Zihan",
+      "description": "Empirical data analysis, hypothesis testing, and Bayesian inference.",
+      "colorGradient": "from-purple-500 via-violet-600 to-indigo-800",
+      "theme": "sunsetLagoon",
+      "language": "en",
+      "nameVisibility": "always",
+      "soundEnabled": true,
+      "decorations": [
+        {
+          "id": "dec-1",
+          "type": "treasureChest",
+          "name": "Treasure Chest",
+          "x": 50,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-2",
+          "type": "pearlClam",
+          "name": "Giant Pearl Clam",
+          "x": 6,
+          "y": 35,
+          "active": true
+        },
+        {
+          "id": "dec-7",
+          "type": "castle",
+          "name": "Atlantis Castle",
+          "x": 75,
+          "y": 86,
+          "active": true
+        }
+      ]
+    },
+    {
+      "_id": "course-eng102",
+      "courseCode": "ENG 102",
+      "courseName": "Technical Writing & Research",
+      "title": "ENG 102: Technical Writing & Research",
+      "subTitle": "Peer review workshops, technical briefs, and research proposals",
+      "department": "Engineering & Humanities",
+      "semester": "Spring 2027",
+      "instructor": "Prof. Zihan",
+      "description": "Mastering engineering documentation, literature reviews, and scientific papers.",
+      "colorGradient": "from-amber-500 via-orange-600 to-rose-700",
+      "theme": "nightGlow",
+      "language": "en",
+      "nameVisibility": "always",
+      "soundEnabled": true,
+      "decorations": [
+        {
+          "id": "dec-1",
+          "type": "treasureChest",
+          "name": "Treasure Chest",
+          "x": 50,
+          "y": 88,
+          "active": true
+        },
+        {
+          "id": "dec-6",
+          "type": "seaweed",
+          "name": "Emerald Seaweed",
+          "x": 92,
+          "y": 88,
+          "active": true
+        }
+      ]
+    }
+  ],
+  "students": [
+    {
+      "_id": "stu_1792944200429_724",
+      "classroomId": "course-1792944200426",
+      "name": "Olivia Zhang",
+      "fishColor": "#fb923c",
+      "fishPattern": "plain",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "guppy",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.429Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.429Z",
+      "updatedAt": "2026-10-25T16:03:20.429Z"
+    },
+    {
+      "_id": "stu_1792944200429_949",
+      "classroomId": "course-1792944200426",
+      "name": "Lucas Sterling",
+      "fishColor": "#f59e0b",
+      "fishPattern": "sparkles",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "tropical",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.429Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.429Z",
+      "updatedAt": "2026-10-25T16:03:20.429Z"
+    },
+    {
+      "_id": "stu_1792944200428_780",
+      "classroomId": "course-1792944200426",
+      "name": "Isabella Rossi",
+      "fishColor": "#eab308",
+      "fishPattern": "scales",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "round",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.428Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.428Z",
+      "updatedAt": "2026-10-25T16:03:20.428Z"
+    },
+    {
+      "_id": "stu_1792944200428_670",
+      "classroomId": "course-1792944200426",
+      "name": "Ethan Brooks",
+      "fishColor": "#f97316",
+      "fishPattern": "dots",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "goldfish",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.428Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.428Z",
+      "updatedAt": "2026-10-25T16:03:20.428Z"
+    },
+    {
+      "_id": "stu_1792944200428_543",
+      "classroomId": "course-1792944200426",
+      "name": "Chloe Richardson",
+      "fishColor": "#8b5cf6",
+      "fishPattern": "floral",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "chubby",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.428Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.428Z",
+      "updatedAt": "2026-10-25T16:03:20.428Z"
+    },
+    {
+      "_id": "stu_1792944200428_943",
+      "classroomId": "course-1792944200426",
+      "name": "Noah Campbell",
+      "fishColor": "#ec4899",
+      "fishPattern": "plain",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "guppy",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.428Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.428Z",
+      "updatedAt": "2026-10-25T16:03:20.428Z"
+    },
+    {
+      "_id": "stu_1792944200427_780",
+      "classroomId": "course-1792944200426",
+      "name": "Sophia Zheng",
+      "fishColor": "#c084fc",
+      "fishPattern": "sparkles",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "tropical",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.427Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.427Z",
+      "updatedAt": "2026-10-25T16:03:20.427Z"
+    },
+    {
+      "_id": "stu_1792944200427_118",
+      "classroomId": "course-1792944200426",
+      "name": "Liam Gallagher",
+      "fishColor": "#0284c7",
+      "fishPattern": "scales",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "round",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.427Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.427Z",
+      "updatedAt": "2026-10-25T16:03:20.427Z"
+    },
+    {
+      "_id": "stu_1792944200427_51",
+      "classroomId": "course-1792944200426",
+      "name": "Maya Lin",
+      "fishColor": "#0d9488",
+      "fishPattern": "dots",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "goldfish",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.427Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.427Z",
+      "updatedAt": "2026-10-25T16:03:20.427Z"
+    },
+    {
+      "_id": "stu_1792944200426_345",
+      "classroomId": "course-1792944200426",
+      "name": "Alexander Vance",
+      "fishColor": "#0ea5e9",
+      "fishPattern": "floral",
+      "points": 30,
+      "todayPoints": 30,
+      "sevenDayPoints": 30,
+      "totalFedCount": 3,
+      "avatarShape": "chubby",
+      "active": true,
+      "history": [
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:44.725Z"
+        },
+        {
+          "points": 5,
+          "reason": "Whole class bonus!",
+          "createdAt": "2026-10-25T16:07:40.969Z"
+        },
+        {
+          "points": 20,
+          "reason": "Enrolled in course",
+          "createdAt": "2026-10-25T16:03:20.426Z"
+        }
+      ],
+      "createdAt": "2026-10-25T16:03:20.426Z",
+      "updatedAt": "2026-10-25T16:03:20.426Z"
+    },
+    {
+      "_id": "stu_1792940126956_0",
+      "classroomId": "course-cs301",
+      "name": "Husanboy",
+      "fishColor": "#0ea5e9",
+      "fishPattern": "floral",
+      "points": 139,
+      "todayPoints": 15,
+      "sevenDayPoints": 139,
+      "totalFedCount": 14,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Graph Traversal Lab 100%"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_1",
+      "classroomId": "course-cs301",
+      "name": "Iymonaxon",
+      "fishColor": "#0d9488",
+      "fishPattern": "floral",
+      "points": 129,
+      "todayPoints": 12,
+      "sevenDayPoints": 129,
+      "totalFedCount": 13,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Dynamic Programming Challenge"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_2",
+      "classroomId": "course-cs301",
+      "name": "Rayhona",
+      "fishColor": "#0284c7",
+      "fishPattern": "scales",
+      "points": 129,
+      "todayPoints": 10,
+      "sevenDayPoints": 129,
+      "totalFedCount": 13,
+      "avatarShape": "tropical",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Binary Search Trees problem set"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_3",
+      "classroomId": "course-cs301",
+      "name": "Mustafo",
+      "fishColor": "#14b8a6",
+      "fishPattern": "dots",
+      "points": 121,
+      "todayPoints": 8,
+      "sevenDayPoints": 121,
+      "totalFedCount": 12,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 8,
+          "reason": "Sorting Complexity Homework"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_4",
+      "classroomId": "course-cs301",
+      "name": "Muhammaddiso",
+      "fishColor": "#c084fc",
+      "fishPattern": "plain",
+      "points": 117,
+      "todayPoints": 14,
+      "sevenDayPoints": 117,
+      "totalFedCount": 11,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Code Peer Review Completed"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_5",
+      "classroomId": "course-cs301",
+      "name": "Bibimaryam",
+      "fishColor": "#ec4899",
+      "fishPattern": "sparkles",
+      "points": 111,
+      "todayPoints": 6,
+      "sevenDayPoints": 111,
+      "totalFedCount": 10,
+      "avatarShape": "goldfish",
+      "history": [
+        {
+          "points": 6,
+          "reason": "HashTable Collisions Lab"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_6",
+      "classroomId": "course-cs301",
+      "name": "Sarvinoz",
+      "fishColor": "#8b5cf6",
+      "fishPattern": "floral",
+      "points": 110,
+      "todayPoints": 7,
+      "sevenDayPoints": 110,
+      "totalFedCount": 10,
+      "avatarShape": "round",
+      "history": [
+        {
+          "points": 7,
+          "reason": "Dijkstra shortest path assignment"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_7",
+      "classroomId": "course-cs301",
+      "name": "Farangiz",
+      "fishColor": "#eab308",
+      "fishPattern": "scales",
+      "points": 101,
+      "todayPoints": 11,
+      "sevenDayPoints": 101,
+      "totalFedCount": 9,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Midterm Algorithm Quiz Ace"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_8",
+      "classroomId": "course-cs301",
+      "name": "Bunyodbek",
+      "fishColor": "#f59e0b",
+      "fishPattern": "floral",
+      "points": 94,
+      "todayPoints": 8,
+      "sevenDayPoints": 94,
+      "totalFedCount": 9,
+      "avatarShape": "guppy",
+      "history": [
+        {
+          "points": 8,
+          "reason": "Clean Modular Architecture"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_9",
+      "classroomId": "course-cs301",
+      "name": "Olimjon",
+      "fishColor": "#eab308",
+      "fishPattern": "floral",
+      "points": 88,
+      "todayPoints": 6,
+      "sevenDayPoints": 88,
+      "totalFedCount": 8,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 6,
+          "reason": "Recursion homework completed"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_10",
+      "classroomId": "course-cs301",
+      "name": "Muqaddas",
+      "fishColor": "#f472b6",
+      "fishPattern": "floral",
+      "points": 82,
+      "todayPoints": 7,
+      "sevenDayPoints": 82,
+      "totalFedCount": 7,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 7,
+          "reason": "Great discussion in lecture"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_11",
+      "classroomId": "course-bio210",
+      "name": "Elena Rostova",
+      "fishColor": "#10b981",
+      "fishPattern": "scales",
+      "points": 145,
+      "todayPoints": 15,
+      "sevenDayPoints": 145,
+      "totalFedCount": 15,
+      "avatarShape": "tropical",
+      "history": [
+        {
+          "points": 15,
+          "reason": "CRISPR Gene Editing Lab Report"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_12",
+      "classroomId": "course-bio210",
+      "name": "David Chen",
+      "fishColor": "#0ea5e9",
+      "fishPattern": "dots",
+      "points": 132,
+      "todayPoints": 10,
+      "sevenDayPoints": 132,
+      "totalFedCount": 13,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Microbiology Culture Notebook"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_13",
+      "classroomId": "course-bio210",
+      "name": "Chloe Bennett",
+      "fishColor": "#ec4899",
+      "fishPattern": "floral",
+      "points": 124,
+      "todayPoints": 8,
+      "sevenDayPoints": 124,
+      "totalFedCount": 12,
+      "avatarShape": "goldfish",
+      "history": [
+        {
+          "points": 8,
+          "reason": "DNA Gel Electrophoresis Analysis"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_14",
+      "classroomId": "course-bio210",
+      "name": "Lucas Morales",
+      "fishColor": "#f59e0b",
+      "fishPattern": "plain",
+      "points": 115,
+      "todayPoints": 12,
+      "sevenDayPoints": 115,
+      "totalFedCount": 11,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Cell Mitosis Problem Set"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_15",
+      "classroomId": "course-bio210",
+      "name": "Maya Patel",
+      "fishColor": "#8b5cf6",
+      "fishPattern": "sparkles",
+      "points": 108,
+      "todayPoints": 5,
+      "sevenDayPoints": 108,
+      "totalFedCount": 10,
+      "avatarShape": "round",
+      "history": [
+        {
+          "points": 5,
+          "reason": "Enzyme Kinetics Quiz"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_16",
+      "classroomId": "course-stat200",
+      "name": "Sophia Williams",
+      "fishColor": "#8b5cf6",
+      "fishPattern": "floral",
+      "points": 150,
+      "todayPoints": 15,
+      "sevenDayPoints": 150,
+      "totalFedCount": 14,
+      "avatarShape": "tropical",
+      "history": [
+        {
+          "points": 15,
+          "reason": "Monte Carlo Simulation Project"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_17",
+      "classroomId": "course-stat200",
+      "name": "Ethan Miller",
+      "fishColor": "#06b6d4",
+      "fishPattern": "dots",
+      "points": 138,
+      "todayPoints": 10,
+      "sevenDayPoints": 138,
+      "totalFedCount": 13,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "R Programming Assignment 4"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_18",
+      "classroomId": "course-stat200",
+      "name": "Liam Anderson",
+      "fishColor": "#f97316",
+      "fishPattern": "scales",
+      "points": 122,
+      "todayPoints": 8,
+      "sevenDayPoints": 122,
+      "totalFedCount": 11,
+      "avatarShape": "guppy",
+      "history": [
+        {
+          "points": 8,
+          "reason": "Central Limit Theorem Verification"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_19",
+      "classroomId": "course-eng102",
+      "name": "James Wright",
+      "fishColor": "#0ea5e9",
+      "fishPattern": "plain",
+      "points": 110,
+      "todayPoints": 10,
+      "sevenDayPoints": 110,
+      "totalFedCount": 10,
+      "avatarShape": "chubby",
+      "history": [
+        {
+          "points": 10,
+          "reason": "Engineering Design Brief"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    },
+    {
+      "_id": "stu_1792940126956_20",
+      "classroomId": "course-eng102",
+      "name": "Olivia Martinez",
+      "fishColor": "#f43f5e",
+      "fishPattern": "floral",
+      "points": 105,
+      "todayPoints": 8,
+      "sevenDayPoints": 105,
+      "totalFedCount": 10,
+      "avatarShape": "tropical",
+      "history": [
+        {
+          "points": 8,
+          "reason": "Peer Review of Capstone Proposal"
+        }
+      ],
+      "createdAt": "2026-10-25T14:55:26.956Z",
+      "updatedAt": "2026-10-25T14:55:26.956Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1792944173835",
+      "email": "abrarjahinkhanzihan@gmail.com",
+      "name": "Prof. zihan",
+      "university": "brac",
+      "institute": "brac",
+      "department": "Computer Science",
+      "createdAt": "2026-10-25T16:02:53.835Z"
+    }
+  ]
+}
