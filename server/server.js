@@ -83,34 +83,29 @@ app.post('/api/auth/login', async (req, res) => {
   // Look up user in persistent store
   const user = await store.findUserByEmail(normEmail);
 
-  // If user not found → first time, return isNewUser (client will ask for password later)
+  // If user not found → new user, send them to register
   if (!user) {
-    return res.json({
-      success: true,
-      isNewUser: true,
-      email: email.trim(),
-      message: 'First time signing in! Please set your Name, Institute and Password.',
+    return res.status(404).json({
+      success: false,
+      error: 'No account found with this email. Please create an account first.',
+    });
+  }
+
+  // Guard: user exists but has no passwordHash (legacy/corrupted record)
+  if (!user.passwordHash) {
+    return res.status(401).json({
+      success: false,
+      error: 'Account setup incomplete. Please create a new account.',
     });
   }
 
   // Verify password
   const passwordMatch = await bcrypt.compare(password, user.passwordHash);
   if (!passwordMatch) {
-    return res.status(401).json({ success: false, error: 'Invalid password' });
+    return res.status(401).json({ success: false, error: 'Invalid email or password.' });
   }
 
-  // If user does not exist yet -> 1st time user! Needs to set Name and Institute
-  if (!user) {
-    return res.json({
-      success: true,
-      isNewUser: true,
-      email: email.trim(),
-      message: 'First time signing in! Please set your Name and Institute.',
-    });
-  }
-
-  // User exists! Direct login into their profile
-  // Remove passwordHash before sending to client
+  // Success — remove passwordHash before sending to client
   const { passwordHash, ...safeUser } = user;
   res.json({
     success: true,
