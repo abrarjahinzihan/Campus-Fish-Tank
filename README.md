@@ -3,11 +3,9 @@
 >
 > *Made with care by Zihan* 🐠
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-campus--fish--tank.vercel.app-brightgreen?style=for-the-badge&logo=vercel)](https://campus-fish-tank.vercel.app/#login)
-[![Backend Status](https://img.shields.io/badge/Backend-Render%20Live-blue?style=for-the-badge&logo=render)](https://campus-fish-tank.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-campus--fish--tank--kclh.vercel.app-brightgreen?style=for-the-badge&logo=vercel)](https://campus-fish-tank-kclh.vercel.app/#login)
 
-🚀 **Live App (Vercel):** [https://campus-fish-tank.vercel.app/#login](https://campus-fish-tank.vercel.app/#login)  
-⚡ **Real-Time API Server (Render):** [https://campus-fish-tank.onrender.com](https://campus-fish-tank.onrender.com)
+🚀 **Live App:** [https://campus-fish-tank-kclh.vercel.app/#login](https://campus-fish-tank-kclh.vercel.app/#login)
 
 ---
 
