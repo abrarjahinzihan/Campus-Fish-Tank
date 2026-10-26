@@ -1,4 +1,5 @@
 import express from 'express';
+import bcrypt from 'bcryptjs';
 import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
@@ -69,15 +70,34 @@ async function connectDatabase() {
 // 0. Teacher Authentication Endpoints
 // 0. Teacher Authentication Endpoints
 app.post('/api/auth/login', async (req, res) => {
-  const { email } = req.body;
+  const { email, password } = req.body;
   if (!email || !email.trim()) {
     return res.status(400).json({ success: false, error: 'Email is required' });
+  }
+  if (!password) {
+    return res.status(400).json({ success: false, error: 'Password is required' });
   }
 
   const normEmail = email.trim().toLowerCase();
 
   // Look up user in persistent store
   const user = await store.findUserByEmail(normEmail);
+
+  // If user not found → first time, return isNewUser (client will ask for password later)
+  if (!user) {
+    return res.json({
+      success: true,
+      isNewUser: true,
+      email: email.trim(),
+      message: 'First time signing in! Please set your Name, Institute and Password.',
+    });
+  }
+
+  // Verify password
+  const passwordMatch = await bcrypt.compare(password, user.passwordHash);
+  if (!passwordMatch) {
+    return res.status(401).json({ success: false, error: 'Invalid password' });
+  }
 
   // If user does not exist yet -> 1st time user! Needs to set Name and Institute
   if (!user) {
@@ -89,20 +109,22 @@ app.post('/api/auth/login', async (req, res) => {
     });
   }
 
-  // User exists! Direct login into their profile with nothing further required
+  // User exists! Direct login into their profile
+  // Remove passwordHash before sending to client
+  const { passwordHash, ...safeUser } = user;
   res.json({
     success: true,
     isNewUser: false,
     message: `Welcome back, ${user.name}!`,
-    user,
+    user: safeUser,
     token: `token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
   });
 });
 
 app.post('/api/auth/register', async (req, res) => {
-  const { name, email, department, university, institute } = req.body;
-  if (!email || !name) {
-    return res.status(400).json({ success: false, error: 'Name and email are required' });
+  const { name, email, password, department, university, institute } = req.body;
+  if (!email || !name || !password) {
+    return res.status(400).json({ success: false, error: 'Name, email, and password are required' });
   }
 
   const inst = (institute || university || 'University Campus').trim();
@@ -110,19 +132,27 @@ app.post('/api/auth/register', async (req, res) => {
     ? name.trim()
     : `Prof. ${name.trim()}`;
 
+  // Hash password
+  const saltRounds = 10;
+  const passwordHash = await bcrypt.hash(password, saltRounds);
+
   const user = await store.saveUser({
     email: email.trim(),
     name: formattedName,
     university: inst,
     institute: inst,
     department: (department || 'Faculty Member').trim(),
+    passwordHash,
   });
+
+  // Do not send passwordHash back
+  const { passwordHash: _ph, ...safeUser } = user;
 
   res.status(201).json({
     success: true,
     isNewUser: false,
     message: 'Profile saved successfully!',
-    user,
+    user: safeUser,
     token: `token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
   });
 });
