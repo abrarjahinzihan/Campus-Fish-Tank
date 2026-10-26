@@ -146,6 +146,10 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
       setErrorMsg('Please enter your university or Gmail email');
       return;
     }
+    if (!password) {
+      setErrorMsg('Please enter your password');
+      return;
+    }
 
     setIsLoading(true);
     setErrorMsg('');
@@ -153,30 +157,22 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
     const cleanEmail = email.trim().toLowerCase();
 
     if (!isRegister) {
-      // Direct login attempt
+      // Login with email + password
       try {
         const res = await fetch(`${API_BASE}/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: cleanEmail }),
+          body: JSON.stringify({ email: cleanEmail, password }),
         });
         const data = await res.json();
 
         if (data.success) {
-          if (data.isNewUser) {
-            // First time! Transition to setting Name and Institute
-            setIsRegister(true);
-            setIsLoading(false);
-            return;
-          } else {
-            // Returning user: DIRECT LOGIN! Nothing else required
-            localStorage.setItem(`faculty_profile_${cleanEmail}`, JSON.stringify(data.user));
-            sounds.playCelebration();
-            onLoginSuccess(data.user, data.token);
-            return;
-          }
+          localStorage.setItem(`faculty_profile_${cleanEmail}`, JSON.stringify(data.user));
+          sounds.playCelebration();
+          onLoginSuccess(data.user, data.token);
+          return;
         } else {
-          setErrorMsg(data.error || 'Login failed. Please verify email.');
+          setErrorMsg(data.error || 'Invalid email or password.');
         }
       } catch {
         // Offline check
@@ -187,13 +183,12 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
           onLoginSuccess(user, 'local_token');
           return;
         }
-        // First time
-        setIsRegister(true);
+        setErrorMsg('Connection failed. Please check your internet.');
       } finally {
         setIsLoading(false);
       }
     } else {
-      // 1st Time Setup: Set Name & Institute once
+      // 1st-Time Setup: Register with Name, Institute, and Password
       if (!name.trim()) {
         setErrorMsg('Please enter your Full Name or Title');
         setIsLoading(false);
@@ -201,6 +196,11 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
       }
       if (!university.trim()) {
         setErrorMsg('Please enter your Institute or University');
+        setIsLoading(false);
+        return;
+      }
+      if (password.length < 6) {
+        setErrorMsg('Password must be at least 6 characters');
         setIsLoading(false);
         return;
       }
@@ -212,6 +212,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
           body: JSON.stringify({
             name: name.trim(),
             email: cleanEmail,
+            password,
             institute: university.trim(),
             university: university.trim(),
             department,
@@ -225,7 +226,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
           onLoginSuccess(data.user, data.token);
           return;
         } else {
-          setErrorMsg(data.error || 'Profile setup failed.');
+          setErrorMsg(data.error || 'Registration failed.');
         }
       } catch {
         // Offline fallback
@@ -375,7 +376,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
             <div className="mb-4 p-3 bg-cyan-950/70 border border-cyan-500/40 rounded-2xl text-xs text-cyan-200 flex items-start gap-2 shadow-inner">
               <Sparkles size={16} className="text-amber-400 flex-shrink-0 mt-0.5" />
               <div>
-                <span className="font-extrabold text-white">1st-Time Setup:</span> Set your Name and Institute once. Future logins will be direct with no password or setup needed!
+                <span className="font-extrabold text-white">1st-Time Setup:</span> Fill in your details and create a password. You'll use your email &amp; password to sign in every time.
               </div>
             </div>
           )}
@@ -412,7 +413,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
             {/* University or Gmail Email */}
             <div>
               <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1">
-                {isRegister ? 'Your Email Address (Gmail or School) *' : 'Enter Your Email or Gmail *'}
+                {isRegister ? 'Your Email Address (Gmail or School) *' : 'Email Address *'}
               </label>
               <div className="relative">
                 <Mail size={16} className="absolute left-3.5 top-3 text-slate-400" />
@@ -425,11 +426,31 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
                   className="w-full bg-slate-800 border border-slate-700 rounded-xl pl-10 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-mono font-medium"
                 />
               </div>
-              {!isRegister && (
-                <p className="text-[11px] text-slate-500 mt-1">
-                  Returning teachers directly access their course hub with zero password required.
-                </p>
-              )}
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                Password *
+              </label>
+              <div className="relative">
+                <Lock size={16} className="absolute left-3.5 top-3 text-slate-400" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  placeholder={isRegister ? 'Create a password (min. 6 characters)' : 'Enter your password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-slate-800 border border-slate-700 rounded-xl pl-10 pr-10 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-medium"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-2.5 text-slate-400 hover:text-cyan-400 transition-colors"
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
             </div>
 
             {/* If 1st-Time Setup: Institute & Department */}
