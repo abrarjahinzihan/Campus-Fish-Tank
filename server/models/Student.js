@@ -8,6 +8,10 @@ const feedLogSchema = new mongoose.Schema({
 
 const studentSchema = new mongoose.Schema(
   {
+    _id: {
+      type: String,
+      default: () => `stu_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
+    },
     classroomId: {
       type: String,
       default: 'default',

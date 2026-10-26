@@ -22,7 +22,13 @@ import { API_BASE } from '../config/api';
 
 export default function LoginPage({ onLoginSuccess = () => {} }) {
   const [isRegister, setIsRegister] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(() => {
+    try {
+      return localStorage.getItem('faculty_remembered_email') || '';
+    } catch {
+      return '';
+    }
+  });
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState('');
@@ -168,6 +174,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
 
         if (data.success) {
           localStorage.setItem(`faculty_profile_${cleanEmail}`, JSON.stringify(data.user));
+          try { localStorage.setItem('faculty_remembered_email', cleanEmail); } catch {}
           sounds.playCelebration();
           onLoginSuccess(data.user, data.token);
           return;
@@ -222,6 +229,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
         const data = await res.json();
         if (data.success) {
           localStorage.setItem(`faculty_profile_${cleanEmail}`, JSON.stringify(data.user));
+          try { localStorage.setItem('faculty_remembered_email', cleanEmail); } catch {}
           sounds.playCelebration();
           onLoginSuccess(data.user, data.token);
           return;

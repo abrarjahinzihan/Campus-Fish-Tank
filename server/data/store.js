@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import { ClassroomModel } from '../models/Classroom.js';
 import { StudentModel } from '../models/Student.js';
+import { UserModel } from '../models/User.js';
 import { initialClassrooms, initialStudents } from './initialData.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -64,13 +65,23 @@ export function setMongoStatus(status) {
 
 export async function initData() {
   if (isMongoConnected) {
-    const classCount = await ClassroomModel.countDocuments();
-    if (classCount === 0) {
-      await ClassroomModel.insertMany(initialClassrooms);
-    }
-    const studentCount = await StudentModel.countDocuments();
-    if (studentCount === 0) {
-      await StudentModel.insertMany(initialStudents);
+    try {
+      const classCount = await ClassroomModel.countDocuments();
+      if (classCount === 0) {
+        await ClassroomModel.insertMany(initialClassrooms);
+        console.log('✅ Seeded initial classrooms into MongoDB');
+      }
+      const studentCount = await StudentModel.countDocuments();
+      if (studentCount === 0) {
+        const studentsToInsert = initialStudents.map((s, index) => ({
+          _id: s._id || `stu_${Date.now()}_${index}_${Math.random().toString(36).substring(2, 7)}`,
+          ...s,
+        }));
+        await StudentModel.insertMany(studentsToInsert);
+        console.log('✅ Seeded initial students into MongoDB');
+      }
+    } catch (err) {
+      console.error('⚠️ Notice in initData seeding:', err.message);
     }
   }
 }
@@ -266,7 +277,10 @@ export const store = {
   async feedStudent(id, pointsToAdd = 5, reason = 'Assignment completed') {
     const pts = Number(pointsToAdd) || 5;
     if (isMongoConnected) {
-      const student = await StudentModel.findById(id);
+      let student = await StudentModel.findById(id);
+      if (!student) {
+        student = await StudentModel.findOne({ _id: id });
+      }
       if (!student) return null;
       student.points += pts;
       student.todayPoints += pts;
@@ -351,31 +365,85 @@ export const store = {
   async findUserByEmail(email) {
     if (!email) return null;
     const norm = email.trim().toLowerCase();
-    return (localDb.users || []).find((u) => u.email.toLowerCase() === norm) || null;
+
+    if (isMongoConnected) {
+      try {
+        const userDoc = await UserModel.findOne({ email: norm });
+        if (userDoc) {
+          const u = userDoc.toObject();
+          return { ...u, id: u._id || u.id };
+        }
+      } catch (err) {
+        console.error('Error finding user in MongoDB:', err.message);
+      }
+    }
+
+    const localUser = (localDb.users || []).find((u) => u.email && u.email.toLowerCase() === norm);
+    if (localUser) {
+      return { ...localUser, id: localUser._id || localUser.id };
+    }
+    return null;
   },
 
   async saveUser(userData) {
     if (!userData || !userData.email) return null;
-    localDb.users = localDb.users || [];
     const norm = userData.email.trim().toLowerCase();
-    const existingIdx = localDb.users.findIndex((u) => u.email.toLowerCase() === norm);
+    const inst = (userData.university || userData.institute || 'University Campus').trim();
+    const id = userData.id || userData._id || `user-${Date.now()}`;
 
     const userObj = {
-      id: userData.id || `user-${Date.now()}`,
-      email: userData.email.trim(),
+      id,
+      _id: id,
+      email: norm,
       name: userData.name.trim(),
-      university: (userData.university || userData.institute || 'University Campus').trim(),
-      institute: (userData.university || userData.institute || 'University Campus').trim(),
+      university: inst,
+      institute: inst,
       department: (userData.department || 'Faculty Member').trim(),
+      passwordHash: userData.passwordHash,
       createdAt: userData.createdAt || new Date().toISOString(),
     };
 
+    if (isMongoConnected) {
+      try {
+        const updated = await UserModel.findOneAndUpdate(
+          { email: norm },
+          {
+            $set: {
+              name: userObj.name,
+              university: userObj.university,
+              institute: userObj.institute,
+              department: userObj.department,
+              passwordHash: userObj.passwordHash,
+              updatedAt: new Date(),
+            },
+            $setOnInsert: {
+              _id: userObj._id,
+              email: norm,
+              createdAt: new Date(),
+            },
+          },
+          { upsert: true, new: true, setDefaultsOnInsert: true }
+        );
+        if (updated) {
+          const obj = updated.toObject();
+          userObj.id = obj._id || obj.id;
+          userObj._id = obj._id || obj.id;
+        }
+      } catch (err) {
+        console.error('Error saving user to MongoDB:', err.message);
+      }
+    }
+
+    // Also update localDb as fallback cache
+    localDb.users = localDb.users || [];
+    const existingIdx = localDb.users.findIndex((u) => u.email && u.email.toLowerCase() === norm);
     if (existingIdx >= 0) {
       localDb.users[existingIdx] = { ...localDb.users[existingIdx], ...userObj };
     } else {
       localDb.users.push(userObj);
     }
     saveLocalDb();
+
     return userObj;
   },
 };

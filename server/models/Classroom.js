@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 
 const classroomSchema = new mongoose.Schema(
   {
+    _id: {
+      type: String,
+      default: () => `course-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+    },
     courseCode: {
       type: String,
       default: 'CS 301',

@@ -39,24 +39,32 @@ io.on('connection', (socket) => {
   });
 });
 
-// Try to connect to MongoDB if provided, or attempt localhost
 async function connectDatabase() {
   if (MONGO_URI) {
     try {
-      await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 2500 });
+      await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 });
       console.log('✅ Connected to MongoDB at:', MONGO_URI);
       setMongoStatus(true);
-      await initData();
+      try {
+        await initData();
+      } catch (seedErr) {
+        console.error('⚠️ Notice during initial seeding:', seedErr.message);
+      }
       return;
     } catch (err) {
       console.warn('⚠️ Could not connect to MONGO_URI, falling back to local JSON store:', err.message);
+      setMongoStatus(false);
     }
   } else {
     try {
       await mongoose.connect('mongodb://127.0.0.1:27017/classfishtank', { serverSelectionTimeoutMS: 1500 });
       console.log('✅ Connected to local MongoDB instance!');
       setMongoStatus(true);
-      await initData();
+      try {
+        await initData();
+      } catch (seedErr) {
+        console.error('⚠️ Notice during initial seeding:', seedErr.message);
+      }
       return;
     } catch (err) {
       console.log('ℹ️ Local MongoDB service not active. Using high-performance JSON store with persistence (Zero-config MERN mode).');
