@@ -14,9 +14,7 @@ import CreateCourseModal from './components/CreateCourseModal';
 import LoginPage from './components/LoginPage';
 import { translations } from './translations';
 import { sounds } from './audio/soundEngine';
-
-const API_BASE = 'http://localhost:5000/api';
-const SOCKET_URL = 'http://localhost:5000';
+import { API_BASE, SOCKET_URL } from './config/api';
 
 export default function App() {
   // Authentication State

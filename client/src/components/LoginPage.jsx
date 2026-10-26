@@ -18,6 +18,7 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import { sounds } from '../audio/soundEngine';
+import { API_BASE } from '../config/api';
 
 export default function LoginPage({ onLoginSuccess = () => {} }) {
   const [isRegister, setIsRegister] = useState(false);
@@ -55,7 +56,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
     // If both name and institute are provided, register/save directly
     if (targetName && targetInst) {
       try {
-        const regRes = await fetch('http://localhost:5000/api/auth/register', {
+        const regRes = await fetch(`${API_BASE}/auth/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -81,7 +82,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const res = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: cleanEmail }),
@@ -154,7 +155,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
     if (!isRegister) {
       // Direct login attempt
       try {
-        const res = await fetch('http://localhost:5000/api/auth/login', {
+        const res = await fetch(`${API_BASE}/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: cleanEmail }),
@@ -205,7 +206,7 @@ export default function LoginPage({ onLoginSuccess = () => {} }) {
       }
 
       try {
-        const res = await fetch('http://localhost:5000/api/auth/register', {
+        const res = await fetch(`${API_BASE}/auth/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
